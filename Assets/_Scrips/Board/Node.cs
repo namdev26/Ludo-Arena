@@ -40,7 +40,7 @@ public class Node : MonoBehaviour
         {
             meshRenderer = GetComponent<MeshRenderer>();
         }
-        ApplyColor();
+        //ApplyColor();
     }
 
     private void OnDrawGizmos()
@@ -61,25 +61,25 @@ public class Node : MonoBehaviour
         }
     }
 
-    void ApplyColor()
-    {
-        switch (nodeType)
-        {
-            case NodeType.Start:
-                meshRenderer.material.color = Color.blue;
-                break;
-            case NodeType.Safe:
-                meshRenderer.material.color = Color.green;
-                break;
-            case NodeType.Home:
-                meshRenderer.material.color = Color.yellow;
-                break;
-            case NodeType.Goal:
-                meshRenderer.material.color = Color.red;
-                break;
-            case NodeType.Branch:
-                meshRenderer.material.color = Color.cyan;
-                break;
-        }
-    }
+    //void ApplyColor()
+    //{
+    //    switch (nodeType)
+    //    {
+    //        case NodeType.Start:
+    //            meshRenderer.material.color = Color.blue;
+    //            break;
+    //        case NodeType.Safe:
+    //            meshRenderer.material.color = Color.green;
+    //            break;
+    //        case NodeType.Home:
+    //            meshRenderer.material.color = Color.yellow;
+    //            break;
+    //        case NodeType.Goal:
+    //            meshRenderer.material.color = Color.red;
+    //            break;
+    //        case NodeType.Branch:
+    //            meshRenderer.material.color = Color.cyan;
+    //            break;
+    //    }
+    //}
 }

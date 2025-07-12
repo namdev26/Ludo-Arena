@@ -29,7 +29,7 @@ public class MovementController
 
             Node nextNode = piece.currentNode.nextNode;
             Vector3 start = piece.transform.position;
-            Vector3 end = nextNode.transform.position + Vector3.up * 0.5f;
+            Vector3 end = nextNode.transform.position + Vector3.up * 0.1f;
             Vector3 dir = (end - start).normalized;
 
             Quaternion startRot = piece.transform.rotation;
