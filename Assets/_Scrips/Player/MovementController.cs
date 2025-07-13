@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class MovementController
@@ -13,12 +14,13 @@ public class MovementController
         this.piece = piece;
     }
 
-    public void MoveSteps(int steps)
+
+    public void MoveSteps(int steps, Action onComplete)
     {
-        piece.StartCoroutine(MoveCoroutine(steps));
+        piece.StartCoroutine(MoveCoroutine(steps, onComplete));
     }
 
-    private IEnumerator MoveCoroutine(int steps)
+    private IEnumerator MoveCoroutine(int steps, Action onComplete)
     {
         IsMoving = true;
         piece.animationController.PlayWalk();
@@ -56,5 +58,7 @@ public class MovementController
 
         piece.animationController.PlayIdle();
         IsMoving = false;
+
+        onComplete?.Invoke();
     }
 }

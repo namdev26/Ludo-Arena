@@ -7314,6 +7314,7 @@ GameObject:
   - component: {fileID: 2298265914105719136}
   - component: {fileID: 6049395289175394167}
   - component: {fileID: 5967180480258944984}
+  - component: {fileID: 119764215634118837}
   m_Layer: 0
   m_Name: TT_Kai
   m_TagString: Untagged
@@ -7373,7 +7374,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f532534a177e264783213dc6cd0486b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerColor: 0
   currentNode: {fileID: 0}
+  selectionEffect: {fileID: 4700940224080907033}
+--- !u!136 &119764215634118837
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381533259842940107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39644563
+  m_Height: 1.7177223
+  m_Direction: 1
+  m_Center: {x: 0.0121974945, y: 0.70515305, z: -0.026720643}
 --- !u!1 &3411851376272322565
 GameObject:
   m_ObjectHideFlags: 0
@@ -20024,5 +20050,10 @@ PrefabInstance:
 --- !u!4 &1696935781018336205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 284448037541899682, guid: bfdaef9fae504b74e93d53d5a85b83e4, type: 3}
+  m_PrefabInstance: {fileID: 1476676970598274671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4700940224080907033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6143804738207128950, guid: bfdaef9fae504b74e93d53d5a85b83e4, type: 3}
   m_PrefabInstance: {fileID: 1476676970598274671}
   m_PrefabAsset: {fileID: 0}

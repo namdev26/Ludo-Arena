@@ -10266,6 +10266,7 @@ GameObject:
   - component: {fileID: 4270532154119535135}
   - component: {fileID: 7739939826046078898}
   - component: {fileID: 3338721665901477693}
+  - component: {fileID: 6552360926510721259}
   m_Layer: 0
   m_Name: TT_Runa
   m_TagString: Untagged
@@ -10325,7 +10326,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f532534a177e264783213dc6cd0486b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerColor: 0
   currentNode: {fileID: 0}
+  selectionEffect: {fileID: 4749951408000158234}
+--- !u!136 &6552360926510721259
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247372721279062060}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.37004292
+  m_Height: 1.846583
+  m_Direction: 1
+  m_Center: {x: -0.0022848845, y: 0.69064397, z: 0.0181036}
 --- !u!1 &5258352445105594503
 GameObject:
   m_ObjectHideFlags: 0
@@ -20024,5 +20050,10 @@ PrefabInstance:
 --- !u!4 &1682821803379538638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 284448037541899682, guid: bfdaef9fae504b74e93d53d5a85b83e4, type: 3}
+  m_PrefabInstance: {fileID: 1488468779678947180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4749951408000158234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6143804738207128950, guid: bfdaef9fae504b74e93d53d5a85b83e4, type: 3}
   m_PrefabInstance: {fileID: 1488468779678947180}
   m_PrefabAsset: {fileID: 0}

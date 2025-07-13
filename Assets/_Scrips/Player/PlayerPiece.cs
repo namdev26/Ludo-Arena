@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 
-public class PlayerPiece : MonoBehaviour
+public class PlayerPiece : MonoBehaviour, IMoveable
 {
+    [Header("Piece Settings")]
+    public PlayerColor playerColor;
     public Node currentNode;
+    public bool IsOut { get; private set; } = false;
+
+    [Header("Controllers")]
     public MovementController movementController;
     public AnimatorController animationController;
+
+    public GameObject selectionEffect;
     public bool isMoving => movementController.IsMoving;
 
     private void Awake()
@@ -13,23 +20,53 @@ public class PlayerPiece : MonoBehaviour
         animationController = new AnimatorController(GetComponent<Animator>());
     }
 
-    private void Update()
+    public void MoveStep(int steps)
     {
-        if (!isMoving)
+        if (isMoving) return;
+
+        if (!IsOut)
         {
-            for (int i = 1; i <= 9; i++)
+            if (steps == 6 && currentNode.nextNode != null)
             {
-                if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+                IsOut = true;
+                movementController.MoveSteps(1, () =>
                 {
-                    MoveStep(i);
-                    break;
-                }
+                    TurnManager.Instance.RepeatTurn();
+                });
             }
+            else
+            {
+                TurnManager.Instance.NextTurn();
+            }
+            return;
+        }
+
+        movementController.MoveSteps(steps, () =>
+        {
+            TurnManager.Instance.NextTurn();
+        });
+    }
+
+    public void SetSelectable(bool isOn)
+    {
+        if (selectionEffect != null)
+        {
+            selectionEffect.SetActive(isOn);
         }
     }
 
-    public void MoveStep(int steps)
+    private void OnMouseDown()
     {
-        movementController.MoveSteps(steps);
+        if (TurnManager.Instance.IsWaitingForSelection(this))
+        {
+            TurnManager.Instance.SelectPiece(this);
+        }
+    }
+
+    public bool CanBeSelectedWithDice(int diceValue)
+    {
+        if (IsOut) return true;
+        if (!IsOut && diceValue == 6) return true;
+        return false;
     }
 }
